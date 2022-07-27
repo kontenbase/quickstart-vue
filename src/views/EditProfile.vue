@@ -67,10 +67,11 @@
 <script>
 import { onMounted, ref } from 'vue';
 import { kontenbase } from '../lib/kontenbase';
-import router from '../router';
+import { useRouter } from 'vue-router';
 
 export default {
   setup() {
+    const router = useRouter();
     const firstName = ref('');
     const lastName = ref('');
     const phoneNumber = ref('');

@@ -53,11 +53,11 @@
 
 <script>
 import { onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
 import { kontenbase } from '../lib/kontenbase';
-
+import { useRouter, useRoute } from 'vue-router';
 export default {
   setup() {
+    const router = useRouter();
     const route = useRoute();
     const firstName = ref('');
     const lastName = ref('');
@@ -111,6 +111,17 @@ export default {
       }
     };
 
+    const handleLogout = async () => {
+      const { error } = await kontenbase.auth.logout();
+
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      router.push('/');
+    };
+
     onMounted(() => {
       getProfile();
     });
@@ -128,6 +139,7 @@ export default {
       position,
       website,
       isOwnProfile,
+      handleLogout,
     };
   },
 };
