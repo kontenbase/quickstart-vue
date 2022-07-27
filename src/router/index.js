@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import EditProfile from '../views/EditProfile.vue';
+import Profile from '../views/Profile.vue';
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
   {
     path: '/profile',
     component: EditProfile,
+  },
+  {
+    path: '/:username',
+    component: Profile,
   },
 ];
 
