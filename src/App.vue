@@ -1,3 +1,9 @@
 <template>
-  <p>initial commit</p>
+  <router-view></router-view>
 </template>
+
+<script>
+export default {
+  name: 'App',
+};
+</script>
