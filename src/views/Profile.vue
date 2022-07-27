@@ -63,7 +63,6 @@ export default {
     const lastName = ref('');
     const phoneNumber = ref('');
     const email = ref('');
-    const username = ref('');
     const profileId = ref('');
     const image = ref('');
     const company = ref('');
@@ -73,7 +72,7 @@ export default {
     const isOwnProfile = ref(false);
 
     const getProfile = async () => {
-      const username = route.params.username;
+      const { username } = route.params;
 
       if (!username) {
         return;
@@ -131,7 +130,6 @@ export default {
       lastName,
       phoneNumber,
       email,
-      username,
       profileId,
       image,
       company,
