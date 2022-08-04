@@ -113,7 +113,6 @@ export default {
     const handleChangeImage = async (e) => {
       loading.value = true;
       const file = e.target.files[0];
-      console.log(file);
       const { data, error: uploadError } = await kontenbase.storage.upload(
         file
       );

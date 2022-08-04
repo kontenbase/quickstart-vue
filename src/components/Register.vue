@@ -68,17 +68,6 @@ export default {
       router.push('/profile');
     };
 
-    const handleLogout = async () => {
-      const { error } = await kontenbase.auth.logout();
-
-      if (error) {
-        console.log(error);
-        return;
-      }
-
-      router.push('/');
-    };
-
     return {
       firstName,
       lastName,

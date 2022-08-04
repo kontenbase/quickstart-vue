@@ -1,6 +1,5 @@
 <template>
   <form @submit.prevent="handleLogin">
-    <input type="hidden" name="operation" value="login" />
     <div class="form-group">
       <label>Username</label>
       <input type="text" name="username" required v-model="username" />
